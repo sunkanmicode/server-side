@@ -1,0 +1,15 @@
+const express = require('express');
+const app = express();
+const cors = require('cors');
+// const PORT = process.env.PORT || 4000;
+
+app.use(express.json());
+app.use(cors())
+
+//routes
+app.use('/auth', require('./routes/jwtAuth'));
+app.use('/dashboard', require('./routes/dashboard'));
+
+app.listen(4000,  ()=>{
+    console.log('server is running on port 4000..');
+});
