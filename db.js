@@ -1,9 +1,10 @@
 const Pool = require('pg').Pool
 
 const pool = new Pool({
-    user: 'postgres',
-    connectionString: "postgresql-amorphous-60784",
-    ssl:true,
+    connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  },
 });
 
 module.exports = pool;
