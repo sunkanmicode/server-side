@@ -7,6 +7,7 @@ app.use(express.json());
 app.use(cors())
 
 //routes
+app.get('/',(req, res)=>{res.send('its working')})
 app.use('/auth', require('./routes/jwtAuth'));
 app.use('/dashboard', require('./routes/dashboard'));
 
