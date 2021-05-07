@@ -10,6 +10,6 @@ app.use(cors())
 app.use('/auth', require('./routes/jwtAuth'));
 app.use('/dashboard', require('./routes/dashboard'));
 
-app.listen(4000,  ()=>{
-    console.log('server is running on port 4000..');
+app.listen(process.env.PORT || 4000,  ()=>{
+    console.log(`server is running on port ${process.env.PORT}..`);
 });
